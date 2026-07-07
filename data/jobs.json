@@ -1,35 +1,45 @@
 {
-  "generated_at": "2026-07-07T22:17:01Z",
-  "run_mode": "from-file (offline, no live re-verify)",
+  "generated_at": "2026-07-07T22:28:36Z",
+  "run_mode": "live",
   "sources_checked": [
     {
       "firm": "General Catalyst",
       "source_type": "greenhouse",
       "confidence": "reliable",
       "count": 4,
-      "board_total_reported": 4
+      "status": "ok"
     },
     {
       "firm": "General Catalyst (portfolio)",
       "source_type": "getro",
       "confidence": "best-effort",
-      "count": 15,
-      "board_total_reported": 18401
+      "count": 0,
+      "status": "failed: HTTP Error 406: Not Acceptable"
     }
   ],
   "stage_counts": {
-    "raw": 19,
+    "raw": 4,
     "after_filters": 0,
     "verified_live": 0
   },
   "matches": [],
   "live_sample": [
     {
+      "title": "AP Lead",
+      "company": "General Catalyst",
+      "location": "New York City",
+      "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7691551003",
+      "posted": "2026-04-30T14:51:03-04:00",
+      "source_type": "greenhouse",
+      "confidence": "reliable",
+      "is_new": true
+    },
+    {
       "title": "Events Specialist",
       "company": "General Catalyst",
       "location": "San Francisco",
       "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7725933003",
-      "posted": "",
+      "posted": "2026-05-06T06:58:37-04:00",
       "source_type": "greenhouse",
       "confidence": "reliable",
       "is_new": true
@@ -39,17 +49,7 @@
       "company": "General Catalyst",
       "location": "Washington D.C.",
       "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7726047003",
-      "posted": "",
-      "source_type": "greenhouse",
-      "confidence": "reliable",
-      "is_new": true
-    },
-    {
-      "title": "AP Lead",
-      "company": "General Catalyst",
-      "location": "New York City",
-      "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7691551003",
-      "posted": "",
+      "posted": "2026-05-06T09:38:23-04:00",
       "source_type": "greenhouse",
       "confidence": "reliable",
       "is_new": true
@@ -59,89 +59,9 @@
       "company": "General Catalyst",
       "location": "San Francisco, CA | Bellevue, WA",
       "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7695529003",
-      "posted": "",
+      "posted": "2026-05-11T12:11:36-04:00",
       "source_type": "greenhouse",
       "confidence": "reliable",
-      "is_new": true
-    },
-    {
-      "title": "Founding Engineer",
-      "company": "Fragment Data Technologies",
-      "location": "San Francisco, CA, USA",
-      "url": "https://jobs.generalcatalyst.com/companies/fragment-data-technologies-2/jobs/84930162-founding-engineer",
-      "posted": "Today",
-      "source_type": "getro",
-      "confidence": "best-effort",
-      "is_new": true
-    },
-    {
-      "title": "Agent Strategist",
-      "company": "Fragment Data Technologies",
-      "location": "San Francisco, CA, USA",
-      "url": "https://jobs.generalcatalyst.com/companies/fragment-data-technologies-2/jobs/84930158-agent-strategist",
-      "posted": "Today",
-      "source_type": "getro",
-      "confidence": "best-effort",
-      "is_new": true
-    },
-    {
-      "title": "Enterprise Sales Executive - US",
-      "company": "TravelPerk",
-      "location": "Chicago, IL, USA",
-      "url": "https://jobs.generalcatalyst.com/companies/travelperk/jobs/84924204-enterprise-sales-executive-us",
-      "posted": "Today",
-      "source_type": "getro",
-      "confidence": "best-effort",
-      "is_new": true
-    },
-    {
-      "title": "Senior Field Marketing Manager - US",
-      "company": "TravelPerk",
-      "location": "Boston, MA, USA",
-      "url": "https://jobs.generalcatalyst.com/companies/travelperk/jobs/84924201-senior-field-marketing-manager-us",
-      "posted": "Today",
-      "source_type": "getro",
-      "confidence": "best-effort",
-      "is_new": true
-    },
-    {
-      "title": "Lead Implementation Specialist, T&S",
-      "company": "TravelPerk",
-      "location": "Boston, MA, USA; Chicago, IL, USA",
-      "url": "https://jobs.generalcatalyst.com/companies/travelperk/jobs/84924206-lead-implementation-specialist-t-s",
-      "posted": "Today",
-      "source_type": "getro",
-      "confidence": "best-effort",
-      "is_new": true
-    },
-    {
-      "title": "Commercial Sales Enablement Manager",
-      "company": "H1",
-      "location": "New York, NY, USA",
-      "url": "https://jobs.generalcatalyst.com/companies/h1/jobs/84873832-commercial-sales-enablement-manager",
-      "posted": "1 day",
-      "source_type": "getro",
-      "confidence": "best-effort",
-      "is_new": true
-    },
-    {
-      "title": "Senior Software Engineer, AI",
-      "company": "Cloaked",
-      "location": "New York, NY, USA",
-      "url": "https://jobs.generalcatalyst.com/companies/cloaked/jobs/84873632-senior-software-engineer-ai",
-      "posted": "1 day",
-      "source_type": "getro",
-      "confidence": "best-effort",
-      "is_new": true
-    },
-    {
-      "title": "Technical Recruiter - Contract (Remote)",
-      "company": "ClassPass",
-      "location": "Remote",
-      "url": "https://jobs.generalcatalyst.com/companies/classpass/jobs/84872601-technical-recruiter-contract-remote",
-      "posted": "1 day",
-      "source_type": "getro",
-      "confidence": "best-effort",
       "is_new": true
     }
   ]
