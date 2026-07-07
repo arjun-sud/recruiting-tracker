@@ -1,0 +1,136 @@
+#!/usr/bin/env python3
+"""Render site/index.html from data/jobs.json. Inlines the data so the file opens on its own;
+the deployed version can instead fetch('data/jobs.json')."""
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).parent
+data = json.loads((ROOT / "data" / "jobs.json").read_text())
+
+HTML = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recruiting Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f7f4; --ink:#1c1c1a; --muted:#6b6b64; --rule:#e3e2db;
+    --card:#ffffff; --accent:#25574a; --accent-ink:#eef5f1; --warn:#9a3b2e;
+    --dot-reliable:#25574a; --dot-best:#b3812f; --dot-fragile:#9a3b2e;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:820px;margin:0 auto;padding:48px 24px 96px}
+  .eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted)}
+  h1{font-family:"Space Grotesk",ui-sans-serif,system-ui,sans-serif;font-weight:600;
+    font-size:34px;letter-spacing:-.01em;margin:6px 0 0}
+  .status{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;color:var(--muted);
+    margin-top:18px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:12px 0;display:flex;flex-wrap:wrap;gap:6px 22px}
+  .status b{color:var(--ink);font-weight:500}
+  section{margin-top:44px}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+    border-bottom:2px solid var(--ink);padding-bottom:8px}
+  .sec-head h2{font-family:"Space Grotesk",sans-serif;font-size:15px;letter-spacing:.02em;margin:0;font-weight:600}
+  .sec-head .count{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+  .sec-note{font-size:13px;color:var(--muted);margin:10px 0 0}
+  .empty{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+    padding:26px;margin-top:16px}
+  .empty h3{margin:0 0 6px;font-family:"Space Grotesk",sans-serif;font-size:16px}
+  .empty p{margin:0;color:var(--muted);font-size:14px}
+  ul.rows{list-style:none;margin:14px 0 0;padding:0}
+  li.row{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--rule)}
+  .row .main{flex:1;min-width:0}
+  .row .title{font-weight:600;font-size:15.5px}
+  .row .meta{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);margin-top:3px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
+  .chip{font-family:"IBM Plex Mono",monospace;font-size:11px;padding:2px 8px;border-radius:100px;
+    border:1px solid var(--rule);color:var(--muted);display:inline-flex;gap:6px;align-items:center}
+  .chip .dot{width:7px;height:7px;border-radius:50%}
+  .chip.new{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+  .apply{align-self:center;font-family:"IBM Plex Mono",monospace;font-size:12px;text-decoration:none;
+    color:var(--ink);border:1px solid var(--ink);border-radius:8px;padding:8px 12px;white-space:nowrap}
+  .apply:hover{background:var(--ink);color:var(--paper)}
+  .apply:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .foot{margin-top:40px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">recruiting tracker &middot; section 01</div>
+  <h1>Internships & externships</h1>
+  <div class="status" id="status"></div>
+
+  <section>
+    <div class="sec-head"><h2>Matches</h2><span class="count" id="m-count"></span></div>
+    <p class="sec-note">Verified internships and externships on the business, strategy, or finance track, US-based or remote. Every one re-checked live before it appears here.</p>
+    <div id="matches"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Live feed sample</h2><span class="count" id="s-count"></span></div>
+    <p class="sec-note">Real roles pulled live from the sources today, before filtering, so you can see the fetch is genuine. These are not your matches, they are proof the machine reaches real listings.</p>
+    <ul class="rows" id="sample"></ul>
+  </section>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const conf = c => ({reliable:'--dot-reliable', 'best-effort':'--dot-best', fragile:'--dot-fragile'}[c]||'--dot-best');
+
+  const srcLine = D.sources_checked.map(s =>
+    `${s.firm} (${s.source_type}${s.board_total_reported? ', '+s.board_total_reported.toLocaleString()+' live':''})`).join('  \u00b7  ');
+  document.getElementById('status').innerHTML =
+    `<span>last checked <b>${D.generated_at.replace('T',' ').replace('Z',' UTC')}</b></span>` +
+    `<span>scanned <b>${D.sources_checked.length}</b> sources</span>` +
+    `<span>${srcLine}</span>`;
+
+  function rowHTML(j){
+    const dot = getComputedStyle(document.documentElement).getPropertyValue(conf(j.confidence));
+    const newChip = j.is_new ? `<span class="chip new">NEW</span>` : '';
+    const loc = j.location || 'Location n/a';
+    const posted = j.posted ? ` \u00b7 ${j.posted}` : '';
+    return `<li class="row"><div class="main">
+      <div class="title">${j.title}</div>
+      <div class="meta">${j.company} \u00b7 ${loc}${posted}</div>
+      <div class="chips">${newChip}
+        <span class="chip"><span class="dot" style="background:${dot}"></span>${j.confidence}</span>
+        <span class="chip">${j.source_type}</span>
+      </div></div>
+      <a class="apply" href="${j.url}" target="_blank" rel="noopener">Apply &rarr;</a></li>`;
+  }
+
+  const m = document.getElementById('matches');
+  document.getElementById('m-count').textContent = D.matches.length + ' found';
+  if(D.matches.length === 0){
+    m.innerHTML = `<div class="empty"><h3>Nothing verified right now</h3>
+      <p>No business, strategy, or finance internships passed the live check this run. July is off-peak; postings ramp up through the fall. This page updates once a day, and new roles land here the morning they appear.</p></div>`;
+  } else {
+    m.innerHTML = '<ul class="rows">' + D.matches.map(rowHTML).join('') + '</ul>';
+  }
+
+  document.getElementById('s-count').textContent = D.live_sample.length + ' shown';
+  document.getElementById('sample').innerHTML = D.live_sample.map(rowHTML).join('');
+
+  document.getElementById('foot').textContent =
+    `run mode: ${D.run_mode} \u2014 raw ${D.stage_counts.raw} \u2192 after filters ${D.stage_counts.after_filters} \u2192 deduped ${D.stage_counts.after_dedupe} \u2192 verified ${D.stage_counts.verified_live}`;
+</script>
+</body>
+</html>
+"""
+
+out = HTML.replace("__DATA__", json.dumps(data))
+(ROOT / "docs").mkdir(exist_ok=True)
+(ROOT / "docs" / "index.html").write_text(out)
+print("wrote docs/index.html")

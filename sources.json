@@ -1,0 +1,18 @@
+{
+  "_note": "The list of boards the daily job checks. Add more by copying an entry. 'greenhouse' needs the board token from a boards.greenhouse.io/<token> URL. 'lever' needs the company slug from jobs.lever.co/<slug>. 'getro' needs the collection id (found in the board's page source as cdn.getro.com/collections/<id>) and the board host.",
+  "sources": [
+    {
+      "firm": "General Catalyst",
+      "type": "greenhouse",
+      "confidence": "reliable",
+      "token": "generalcatalyst"
+    },
+    {
+      "firm": "General Catalyst (portfolio)",
+      "type": "getro",
+      "confidence": "best-effort",
+      "collection_id": "468b7f6f-311b-404f-984b-5d752d42368d",
+      "host": "jobs.generalcatalyst.com"
+    }
+  ]
+}

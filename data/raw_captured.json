@@ -1,0 +1,43 @@
+{
+  "_note": "Real listings fetched live on 2026-07-07 via web fetch. Greenhouse board = General Catalyst's own openings. Getro board = General Catalyst portfolio (jobs.generalcatalyst.com, showed 18,401 live jobs; this is the newest page). Nothing here is invented.",
+  "fetched_at": "2026-07-07T22:05:00Z",
+  "sources": [
+    {
+      "firm": "General Catalyst",
+      "source_type": "greenhouse",
+      "confidence": "reliable",
+      "board_url": "https://job-boards.greenhouse.io/generalcatalyst",
+      "board_total_reported": 4,
+      "jobs": [
+        {"title": "Events Specialist", "location": "San Francisco", "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7725933003"},
+        {"title": "Events Specialist", "location": "Washington D.C.", "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7726047003"},
+        {"title": "AP Lead", "location": "New York City", "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7691551003"},
+        {"title": "Senior Analyst, Portfolio Manager - GC Wealth", "location": "San Francisco, CA | Bellevue, WA", "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7695529003"}
+      ]
+    },
+    {
+      "firm": "General Catalyst (portfolio)",
+      "source_type": "getro",
+      "confidence": "best-effort",
+      "board_url": "https://jobs.generalcatalyst.com/jobs",
+      "board_total_reported": 18401,
+      "jobs": [
+        {"title": "Founding Engineer", "company": "Fragment Data Technologies", "location": "San Francisco, CA, USA", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/fragment-data-technologies-2/jobs/84930162-founding-engineer"},
+        {"title": "Agent Strategist", "company": "Fragment Data Technologies", "location": "San Francisco, CA, USA", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/fragment-data-technologies-2/jobs/84930158-agent-strategist"},
+        {"title": "Enterprise Sales Executive - US", "company": "TravelPerk", "location": "Chicago, IL, USA", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/travelperk/jobs/84924204-enterprise-sales-executive-us"},
+        {"title": "Senior Field Marketing Manager - US", "company": "TravelPerk", "location": "Boston, MA, USA", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/travelperk/jobs/84924201-senior-field-marketing-manager-us"},
+        {"title": "Facilities Manager", "company": "TravelPerk", "location": "Barcelona, Spain", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/travelperk/jobs/84924202-facilities-manager"},
+        {"title": "Lead Implementation Specialist, T&S", "company": "TravelPerk", "location": "Boston, MA, USA; Chicago, IL, USA", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/travelperk/jobs/84924206-lead-implementation-specialist-t-s"},
+        {"title": "Engineering Manager - ERP", "company": "TravelPerk", "location": "Zurich, Switzerland", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/travelperk/jobs/84924205-engineering-manager-erp"},
+        {"title": "Engineering Manager - ERP", "company": "TravelPerk", "location": "London, UK", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/travelperk/jobs/84924203-engineering-manager-erp"},
+        {"title": "Enterprise Engagement Manager", "company": "Parloa", "location": "Berlin, Germany", "posted": "Today", "url": "https://de.linkedin.com/jobs/view/enterprise-engagement-manager-at-parloa-4435826296"},
+        {"title": "Senior Backend Engineer (Remote)", "company": "Prypco", "location": "Dubai, United Arab Emirates", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/prypco-2/jobs/84898593-senior-backend-engineer-remote"},
+        {"title": "Data Analyst (Product)", "company": "Prypco", "location": "Dubai, United Arab Emirates", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/prypco-2/jobs/84898594-data-analyst-product"},
+        {"title": "Sales Assistant", "company": "Prypco", "location": "Dubai, United Arab Emirates", "posted": "Today", "url": "https://jobs.generalcatalyst.com/companies/prypco-2/jobs/84898588-sales-assistant"},
+        {"title": "Commercial Sales Enablement Manager", "company": "H1", "location": "New York, NY, USA", "posted": "1 day", "url": "https://jobs.generalcatalyst.com/companies/h1/jobs/84873832-commercial-sales-enablement-manager"},
+        {"title": "Senior Software Engineer, AI", "company": "Cloaked", "location": "New York, NY, USA", "posted": "1 day", "url": "https://jobs.generalcatalyst.com/companies/cloaked/jobs/84873632-senior-software-engineer-ai"},
+        {"title": "Technical Recruiter - Contract (Remote)", "company": "ClassPass", "location": "Remote", "posted": "1 day", "url": "https://jobs.generalcatalyst.com/companies/classpass/jobs/84872601-technical-recruiter-contract-remote"}
+      ]
+    }
+  ]
+}
