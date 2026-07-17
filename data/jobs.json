@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-16T16:56:54Z",
+  "generated_at": "2026-07-17T16:47:24Z",
   "run_mode": "live",
   "sources_checked": [
     {
       "firm": "General Catalyst",
       "source_type": "greenhouse",
       "confidence": "reliable",
-      "count": 4,
+      "count": 3,
       "status": "ok"
     },
     {
@@ -18,7 +18,7 @@
     }
   ],
   "stage_counts": {
-    "raw": 4,
+    "raw": 3,
     "after_filters": 0,
     "verified_live": 0
   },
@@ -50,16 +50,6 @@
       "location": "Washington D.C.",
       "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7726047003",
       "posted": "2026-05-06T09:38:23-04:00",
-      "source_type": "greenhouse",
-      "confidence": "reliable",
-      "is_new": true
-    },
-    {
-      "title": "Senior Analyst, Portfolio Manager - GC Wealth",
-      "company": "General Catalyst",
-      "location": "San Francisco, CA | Bellevue, WA",
-      "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7695529003",
-      "posted": "2026-05-11T12:11:36-04:00",
       "source_type": "greenhouse",
       "confidence": "reliable",
       "is_new": true
