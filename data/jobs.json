@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-20T19:15:11Z",
+  "generated_at": "2026-07-21T17:55:18Z",
   "run_mode": "live",
   "sources_checked": [
     {
       "firm": "General Catalyst",
       "source_type": "greenhouse",
       "confidence": "reliable",
-      "count": 3,
+      "count": 4,
       "status": "ok"
     },
     {
@@ -18,7 +18,7 @@
     }
   ],
   "stage_counts": {
-    "raw": 3,
+    "raw": 4,
     "after_filters": 0,
     "verified_live": 0
   },
@@ -30,6 +30,16 @@
       "location": "New York City",
       "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7691551003",
       "posted": "2026-04-30T14:51:03-04:00",
+      "source_type": "greenhouse",
+      "confidence": "reliable",
+      "is_new": true
+    },
+    {
+      "title": "Client Service Associate, GC Wealth",
+      "company": "General Catalyst",
+      "location": "Washington, D.C.",
+      "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7711183003",
+      "posted": "2026-07-20T15:18:09-04:00",
       "source_type": "greenhouse",
       "confidence": "reliable",
       "is_new": true
