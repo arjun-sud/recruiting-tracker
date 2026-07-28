@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-27T18:14:41Z",
+  "generated_at": "2026-07-28T18:02:16Z",
   "run_mode": "live",
   "sources_checked": [
     {
       "firm": "General Catalyst",
       "source_type": "greenhouse",
       "confidence": "reliable",
-      "count": 4,
-      "status": "ok"
+      "count": 0,
+      "status": "failed: The read operation timed out"
     },
     {
       "firm": "General Catalyst (portfolio)",
@@ -18,51 +18,10 @@
     }
   ],
   "stage_counts": {
-    "raw": 4,
+    "raw": 0,
     "after_filters": 0,
     "verified_live": 0
   },
   "matches": [],
-  "live_sample": [
-    {
-      "title": "AP Lead",
-      "company": "General Catalyst",
-      "location": "New York City",
-      "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7691551003",
-      "posted": "2026-04-30T14:51:03-04:00",
-      "source_type": "greenhouse",
-      "confidence": "reliable",
-      "is_new": true
-    },
-    {
-      "title": "Client Service Associate, GC Wealth",
-      "company": "General Catalyst",
-      "location": "Washington, D.C.",
-      "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7711183003",
-      "posted": "2026-07-20T15:18:09-04:00",
-      "source_type": "greenhouse",
-      "confidence": "reliable",
-      "is_new": true
-    },
-    {
-      "title": "Events Specialist",
-      "company": "General Catalyst",
-      "location": "San Francisco",
-      "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7725933003",
-      "posted": "2026-05-06T06:58:37-04:00",
-      "source_type": "greenhouse",
-      "confidence": "reliable",
-      "is_new": true
-    },
-    {
-      "title": "Events Specialist",
-      "company": "General Catalyst",
-      "location": "Washington D.C.",
-      "url": "https://job-boards.greenhouse.io/generalcatalyst/jobs/7726047003",
-      "posted": "2026-05-06T09:38:23-04:00",
-      "source_type": "greenhouse",
-      "confidence": "reliable",
-      "is_new": true
-    }
-  ]
+  "live_sample": []
 }
