@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T18:34:32Z",
+  "generated_at": "2026-10-29T18:43:46Z",
   "run_mode": "live",
   "sources_checked": [
     {
@@ -7,7 +7,7 @@
       "source_type": "greenhouse",
       "confidence": "reliable",
       "count": 0,
-      "status": "ok"
+      "status": "failed: HTTP Error 404: Not Found"
     },
     {
       "firm": "General Catalyst (portfolio)",
